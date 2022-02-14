@@ -39,3 +39,4 @@ def time_it(f, n):
     print(fmt.format(dt, dt/N*1e6, N/dt*1e-3))
 
 time_it(blink_preload_unrolled8_native, N)
+led.deinit()

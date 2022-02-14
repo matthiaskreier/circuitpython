@@ -1,5 +1,5 @@
 import time
-import board
+import machine
 import digitalio
 
 led = digitalio.DigitalInOut(board.LED)
