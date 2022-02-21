@@ -1,32 +1,16 @@
-# RVR drive example 2022-02-17
-
-import board
-import busio
-import time
-import math
-
-import adafruit_hcsr04
+# RVR drive example 2022-02-21
+import board, busio, time, math, digitalio, adafruit_hcsr04
+from ssis_rvr   import pin
 from sphero_rvr import RVRDrive
 
-#sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.IO5, echo_pin=board.IO4)   # lilygo ESP32-S2
-#sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.B1, echo_pin=board.B0)     # blackpill
-#sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.GP10, echo_pin=board.GP11) # RP Pico
-sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D11, echo_pin=board.D10)    # M4 Metro express
+rvr   = RVRDrive(uart = busio.UART(pin.TX, pin.RX, baudrate=115200))
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=pin.TRIGGER, echo_pin=pin.ECHO)
 
-#rvr = RVRDrive(uart = busio.UART(board.IO1, board.IO2, baudrate=115200))    # lilygo ESP32-S2
-#rvr = RVRDrive(uart = busio.UART(board.A2, board.A3, baudrate=115200))      # blackpill
-#rvr = RVRDrive(uart = busio.UART(board.GP4, board.GP5, baudrate=115200))    # RP Pico
-rvr = RVRDrive(uart = busio.UART(board.D1, board.D0, baudrate=115200))       # M4 Metro express
-
-time.sleep(0.5)
-
-rvr.set_all_leds(255,0,0) #set leds to red
-time.sleep(0.1)
-rvr.set_all_leds(0,255,0) #set leds to green
-time.sleep(0.1)
-rvr.set_all_leds(0,0,255) #set leds to blue
-time.sleep(0.1) #turn off
-rvr.set_all_leds(255,255,255) #turn off leds or make them all black
+time.sleep(0.2)
+rvr.set_all_leds(255,0,0) # set leds to red
+time.sleep(0.2)
+rvr.set_all_leds(0,0,0)   # turn off leds
+time.sleep(0.2)
 
 rvr.sensor_start()
 
