@@ -11,7 +11,7 @@ class pin:
         TRIGGER = board.B1
         ECHO    = board.B0
 
-    elif id == "rp pico":
+    elif id == "raspberry_pi_pico":
         TX      = board.GP4
         RX      = board.GP5
         TRIGGER = board.GP10
