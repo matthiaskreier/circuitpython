@@ -3,7 +3,7 @@ import board, busio, time, math, digitalio, adafruit_hcsr04
 from ssis_rvr   import pin
 from sphero_rvr import RVRDrive
 
-rvr = RVRDrive(uart = busio.UART(pin.TX, pin.RX, baudrate=115200))
+rvr   = RVRDrive(uart = busio.UART(pin.TX, pin.RX, baudrate=115200))
 sonar = adafruit_hcsr04.HCSR04(trigger_pin=pin.TRIGGER, echo_pin=pin.ECHO)
 
 while True:

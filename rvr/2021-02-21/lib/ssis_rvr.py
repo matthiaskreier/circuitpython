@@ -23,7 +23,7 @@ class pin:
         TRIGGER = board.D11
         ECHO    = board.D10
 
-    elif id == "LILYGO ESP32-S2":
+    elif id == "lilygo_ttgo_t8_s2_st7789":
         TX      = board.IO1
         RX      = board.IO2
         TRIGGER = board.IO5
