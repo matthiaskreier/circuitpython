@@ -7,4 +7,13 @@ Pin definition Microcontroller to RVR
 Ultrasonic trigger  B1       GP10     IO5          D11
            echo     B0       GP11     IO4          D10
 
+            LED     C13
+            KEY     A0
+ 
+            SCL     B6
+            SDA     B7
 
+          MOSI1     A7
+          MISO1     A6
+           SCK1     A5
+           NSS1     A4
